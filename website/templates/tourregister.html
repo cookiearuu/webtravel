@@ -248,6 +248,7 @@ width:10%;
   background-position: center;
   opacity: 0.7;
   z-index: -1;
+
   </style>
 
 <!--</html>-->
@@ -294,18 +295,29 @@ width:10%;
 <!--  </div>-->
 <!--</section>-->
 
-<section class="hero-wrap js-fullheight" style="background-image: url({{ tours.image.url }});">
-   <div class="aru"> AAAAAAAAAAAAAAAAA</div>
-  <div class="container">
-    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
-      <div class="col-md-12 ftco-animate text-center">
-        <h1 class="mb-4">{{ tours.place }}</h1>
-        <p class="tour-details">{{ tours.description|truncatewords:50 }}</p>
-      </div>
-    </div>
-  </div>
-</section>
 
+
+
+ <section class="jk" style="margin-top: 60px; background-image: url('{{ tours.image.url }}');" >
+<!--   <style>-->
+<!--      .jk{-->
+<!--    margin-top:60px;-->
+<!--    background-image:{{tour.image.url}};-->
+<!--    }-->
+<!--   </style>-->
+            {% if tours %}
+
+              <h2>{{ tours.name }}</h2>
+             <p style="color:black"><strong>Place:</strong> {{ tours.place }}</p>
+             <p style="color:black"><strong>Transport:</strong> {{ tours.transport }}</p>
+             <p style="color:black" ><strong>Quantity:</strong> {{ tours.quantity }}</p>
+             <p style="color:black"><strong>Description:</strong> {{ tours.description }}</p>
+             <p style="color:black"><strong>Price:</strong> {{ tours.price }}</p>
+             <p style="color:black"><strong>Date:</strong> {{ tours.date }}</p>
+            {% else %}
+             <p style="color:black" class="not-found">Tour not found.</p>
+            {% endif %}
+ </section>
 
 <button class="buttonback" id="aaa" onclick="goBack()">Go Back</button>
   {% load static %}

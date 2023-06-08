@@ -123,13 +123,15 @@
         }
     </style>
   {% if registered_tours %}
-    <ul>
+    <ul >
       {% for registered_tour in registered_tours %}
-        <li id="tour-{{ registered_tour.tour.id }}" style="background-color: white">
-          <h3 id="h3">{{ registered_tour.tour.place }}</h3>
+        <li  href="{% url 'about_tour' registered_tour.id %}" id="tour-{{ registered_tour.tour.id }}" style="background-color: white">
+
           <h6>{{ registered_tour.transport }}</h6>
-          <h6>{{ registered_tour.agency }}</h6>
-          <h6>{{ registered_tour.category }}</h6>
+          <h6>{{ registered_tour.agency.name }} tour agency</h6>
+		<a href="{% url 'about_tour' registered_tour.id %}">
+          <h6>{{ registered_tour.category.name}}</h6>
+		</a>
           <form method="POST" action="{% url 'delete_tour' registered_tour.id user.username%}">
             {% csrf_token %}
             <button type="submit">Delete</button>

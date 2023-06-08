@@ -397,6 +397,7 @@ def mytours(request, user_username):
         registered_tours = registeredusers.objects.filter(email=userr.email)
         registered_tourss = []
 
+
         for registered_tour in registered_tours:
             tour_info = tours.objects.get(id=registered_tour.tour_id)
             registered_tourss.append(tour_info)
@@ -427,9 +428,31 @@ def user_profile(request, user_username):
     users = user.objects.get(username=user_username)
     context = {'user': users}
     return render(request, 'info.html', context)
+#
+# def update_user(request, user_username):
+#     users = user.objects.get(username=user_username)
+#
+#     if request.method == 'POST':
+#         new_username = request.POST.get('new_username')
+#         new_email = request.POST.get('new_email')
+#         new_password = request.POST.get('new_password')
+#
+#         if new_username:
+#             users.username = new_username
+#         if new_email:
+#             users.email = new_email
+#         if new_password:
+#             users.password = new_password
+#
+#         users.save()
+#         return redirect('user_profile', user_username=user_username)
+#
+#     return render(request, 'info.html', {'user': users})
+from django.shortcuts import render, redirect
+from .models import user
 
 def update_user(request, user_username):
-    users = user.objects.get(username=user_username)
+    user_instance = user.objects.get(username=user_username)
 
     if request.method == 'POST':
         new_username = request.POST.get('new_username')
@@ -437,16 +460,17 @@ def update_user(request, user_username):
         new_password = request.POST.get('new_password')
 
         if new_username:
-            users.username = new_username
+            user_instance.username = new_username
         if new_email:
-            users.email = new_email
+            user_instance.email = new_email
         if new_password:
-            users.password = new_password
+            user_instance.password = new_password
 
-        users.save()
-        return redirect('user_profile', user_username=user_username)
+        user_instance.save()
+        return redirect('user_profile', user_username=user_instance.username)
 
-    return render(request, 'info.html', {'user': users})
+    return render(request, 'info.html', {'user': user_instance})
+
 
 
 def registered_users_view(request, tour_id):

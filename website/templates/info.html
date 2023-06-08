@@ -8,6 +8,10 @@
 	 .ccc{
         background-color: #339933;
     }
+     .jk{
+    margin-top:100px;
+    background-color:white;
+    }
 </style>
 
 
@@ -164,12 +168,95 @@
 
 
 
-<section id="ccc">
-    <style>
-    section {
-        padding: 20px;
-        background-color: #f1f1f1;
-    }
+<!--<section id="ccc">-->
+<!--    <style>-->
+<!--    section {-->
+<!--        padding: 20px;-->
+<!--        background-color: #f1f1f1;-->
+<!--    }-->
+
+<!--    h1 {-->
+<!--        font-size: 24px;-->
+<!--        margin-bottom: 10px;-->
+<!--        margin-top: 80px;-->
+<!--    }-->
+
+<!--    p {-->
+<!--        margin-bottom: 5px;-->
+<!--        margin-top: 10px;-->
+<!--    }-->
+
+<!--    button {-->
+<!--        padding: 10px 20px;-->
+<!--        background-color: #4CAF50;-->
+<!--        color: #fff;-->
+<!--        border: none;-->
+<!--        cursor: pointer;-->
+<!--    }-->
+
+<!--    .edit-form {-->
+<!--        display: none;-->
+<!--        margin-top: 20px;-->
+<!--    }-->
+
+<!--    label {-->
+<!--        display: block;-->
+<!--        margin-bottom: 5px;-->
+<!--    }-->
+
+<!--    input[type="text"],-->
+<!--    input[type="email"],-->
+<!--    input[type="password"] {-->
+<!--        width: 100%;-->
+<!--        padding: 8px;-->
+<!--        margin-bottom: 10px;-->
+<!--        border: 1px solid #ccc;-->
+<!--        border-radius: 4px;-->
+<!--    }-->
+
+<!--    button[type="submit"] {-->
+<!--        padding: 10px 20px;-->
+<!--        background-color: #4CAF50;-->
+<!--        color: #fff;-->
+<!--        border: none;-->
+<!--        cursor: pointer;-->
+<!--    }-->
+<!--</style >-->
+<!--    <h1>User Profile</h1>-->
+<!--    <p>Username: {{ user.username }}</p>-->
+<!--    <p>Email: {{ user.email }}</p>-->
+
+<!--    <button onclick="showEditForm()">Edit</button>-->
+
+<!--    <form id="edit-form" class="edit-form" method="POST" action="{% url 'update_user' user.username %}">-->
+<!--        {% csrf_token %}-->
+<!--        <label for="new_username">New Username:</label>-->
+<!--        <input type="text" id="new_username" name="new_username" value="{{ user.username }}">-->
+
+<!--        <label for="new_email">New Email:</label>-->
+<!--        <input type="email" id="new_email" name="new_email" value="{{ user.email }}">-->
+
+<!--        <label for="new_password">New Password:</label>-->
+<!--        <input type="password" id="new_password" name="new_password" value="{{ user.password }}">-->
+
+<!--        <button type="submit">Save</button>-->
+<!--    </form>-->
+<!--</section>-->
+
+
+
+
+
+ <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static 'website/images2/place-1.jpeg'%});">
+
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+
+		<section id="jk">
+			<style>
+
+
 
     h1 {
         font-size: 24px;
@@ -217,29 +304,59 @@
         border: none;
         cursor: pointer;
     }
-</style >
-    <h1>User Profile</h1>
-    <p>Username: {{ user.username }}</p>
-    <p>Email: {{ user.email }}</p>
+	</style >
 
-    <button onclick="showEditForm()">Edit</button>
+   			 <h1>User Profile</h1>
+   			 <p>Username: {{ user.username }}</p>
+  			  <p>Email: {{ user.email }}</p>
 
-    <form id="edit-form" class="edit-form" method="POST" action="{% url 'update_user' user.username %}">
-        {% csrf_token %}
-        <label for="new_username">New Username:</label>
-        <input type="text" id="new_username" name="new_username" value="{{ user.username }}">
+   					<button onclick="showEditForm()">Edit</button>
 
-        <label for="new_email">New Email:</label>
-        <input type="email" id="new_email" name="new_email" value="{{ user.email }}">
+						<form id="edit-form" class="edit-form" method="POST" action="{% url 'update_user' user.username %}">
+  							{% csrf_token %}
+    							<label for="new_username">New Username:</label>
+    							<input type="text" id="new_username" name="new_username" value="{{ user.username }}">
+    							<label for="new_email">New Email:</label>
+    							<input type="email" id="new_email" name="new_email" value="{{ user.email }}">
+    							<label for="new_password">New Password:</label>
+    							<input type="password" id="new_password" name="new_password" value="{{ user.password }}">
+    							<button type="submit">Save</button>
+  							</form>
 
-        <label for="new_password">New Password:</label>
-        <input type="password" id="new_password" name="new_password" value="{{ user.password }}">
-
-        <button type="submit">Save</button>
-    </form>
+  							<script>
+  						    	function showEditForm() {
+    				  				var editForm = document.getElementById('edit-form');
+    								var newUsernameInput = document.getElementById('new_username');
+   									 var currentUsername = newUsernameInput.value;
+    								 var actionURL = editForm.action;
+   									 var updatedActionURL = actionURL.replace(/\/update\/[\w-]+\//, "/update/" + currentUsername + "/");
+                           			 editForm.action = updatedActionURL;
+							     }
+							</script>
+		 </section>
+      <div class="col-md-9 ftco-animate pb-5 text-center">
+   </div>
+   </div>
+ </div>
 </section>
 
+<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+			<script src="{%static 'website/js/jquery.min.js' %}"></script>
+			<script src="{%static 'website/js/jquery-migrate-3.0.1.min.js' %}"></script>
+			<script src="{%static 'website/js/popper.min.js' %}"></script>
+			<script src="{%static 'website/js/bootstrap.min.js' %}"></script>
+			<script src="{%static 'website/js/jquery.easing.1.3.js' %}"></script>
+			<script src="{%static 'website/js/jquery.waypoints.min.js' %}"></script>
+			<script src="{%static 'website/js/jquery.stellar.min.js' %}"></script>
+			<script src="{%static 'website/js/owl.carousel.min.js' %}"></script>
+			<script src="{%static 'website/js/jquery.magnific-popup.min.js' %}"></script>
+			<script src="{%static 'website/js/jquery.animateNumber.min.js' %}"></script>
+			<script src="{%static 'website/js/bootstrap-datepicker.js' %}"></script>
+			<script src="{%static 'website/js/scrollax.min.js'%}"></script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+			<script src="{%static 'website/js/google-map.js' %}"></script>
+			<script src="{%static 'website/js/main.js' %}"></script>
 
 
 
