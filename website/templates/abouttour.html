@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{%load static %}
+<html>
+<head>
+    <title>About Tour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 400px;
+            height: auto;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .not-found {
+            text-align: center;
+            margin-top: 30px;
+            font-style: italic;
+            color: #999;
+        }
+    </style>
+
+	<title>Home</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="{% static   'website/images2/travel.png'%}" type="image/x-icon">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="{%static 'website/css/animate.css'%}">
+
+	<link rel="stylesheet" href="{%static 'website/css/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{%static 'website/css/owl.theme.default.min.css'%}">
+	<link rel="stylesheet" href="{%static 'website/css/magnific-popup.css'%}">
+
+	<link rel="stylesheet" href="{%static 'website/css/bootstrap-datepicker.css'%}">
+	<link rel="stylesheet" href="{%static 'website/css/jquery.timepicker.css'%}">
+
+
+	<link rel="stylesheet" href="{%static 'website/css/flaticon.css' %}">
+	<link rel="stylesheet" href="{%static 'website/css/style.css' %}">
+
+</head>
+<body>
+    <h1>About Tour</h1>
+    {% if tour %}
+        <h2>{{ tour.name }}</h2>
+        <img src="{{ tour.image.url }}" alt="Tour Image">
+        <p><strong>Place:</strong> {{ tour.place }}</p>
+        <p><strong>Transport:</strong> {{ tour.transport }}</p>
+        <p><strong>Quantity:</strong> {{ tour.quantity }}</p>
+        <p><strong>Description:</strong> {{ tour.description }}</p>
+        <p><strong>Price:</strong> {{ tour.price }}</p>
+        <p><strong>Date:</strong> {{ tour.date }}</p>
+    {% else %}
+        <p class="not-found">Tour not found.</p>
+    {% endif %}
+</body>
+</html>

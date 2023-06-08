@@ -1,0 +1,362 @@
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>REGISTER TO TOUR HERE</title>-->
+<!--   <style>-->
+<!--    body {-->
+<!--        font-family: Arial, sans-serif;-->
+<!--        background-color: #f2f2f2;-->
+<!--    }-->
+
+<!--    h1, h3 {-->
+<!--        color: #333;-->
+<!--    }-->
+
+<!--    form {-->
+<!--        margin: 20px;-->
+<!--        padding: 20px;-->
+<!--        background-color: #fff;-->
+<!--        border-radius: 5px;-->
+<!--        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);-->
+<!--    }-->
+
+<!--    label {-->
+<!--        display: block;-->
+<!--        margin-bottom: 10px;-->
+<!--    }-->
+
+<!--    input[type="text"],-->
+<!--    input[type="number"],-->
+<!--    input[type="tel"],-->
+<!--    input[type="date"],-->
+<!--    input[type="password"] {-->
+<!--        width: 100%;-->
+<!--        padding: 10px;-->
+<!--        border: 1px solid #ccc;-->
+<!--        border-radius: 4px;-->
+<!--    }-->
+
+<!--    button[type="submit"] {-->
+<!--        padding: 10px 20px;-->
+<!--        background-color: #4CAF50;-->
+<!--        color: #fff;-->
+<!--        border: none;-->
+<!--        border-radius: 4px;-->
+<!--        cursor: pointer;-->
+<!--    }-->
+
+<!--    a {-->
+<!--        color: #333;-->
+<!--        text-decoration: none;-->
+<!--    }-->
+
+<!--</style>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--    {% load static %}-->
+<!--    <h3>Register to  {{ tour.place }} tour here!</h3>-->
+
+
+<!--    <form action="registerbutton/" method="post">-->
+<!--        {% csrf_token %}-->
+
+<!--        <label for="name">Name</label>-->
+<!--        <input type="text" placeholder="Enter your name" id="name" name="name">-->
+
+<!--        <label for="lastname">Last name</label>-->
+<!--        <input type="text" placeholder="Enter your last name" id="lastname" name="lastname">-->
+
+<!--        <label for="phonenumber">Phone Number</label>-->
+<!--        <input type="tel" placeholder="Enter your phone number" id="phonenumber" name="phonenumber">-->
+
+<!--        <label for="phonenumber">Card Number</label>-->
+<!--        <input type="number" placeholder="Enter your card number" id="cardnumber" name="cardnumber">-->
+
+<!--        <label for="cvv">CVV</label>-->
+<!--        <input type="number" placeholder="Enter CVV" id="cvv" name="cvv">-->
+
+<!--        <label for="expiration">Expiration Date</label>-->
+<!--        <input type="date" placeholder="Enter expiration of your card" id="expiration" name="expiration">-->
+
+<!--            {% if registered %}-->
+<!--                 <p>You have successfully registered!</p>-->
+<!--            {% endif %}-->
+
+<!--        <button type="submit">Register</button>-->
+<!--    </form>-->
+<!--    {% if registered %}-->
+<!--     <script>-->
+<!--        window.onload = function() {-->
+<!--            alert("You have successfully registered!");-->
+
+<!--            // Wait for 5 seconds (5000 milliseconds) and then hide the message-->
+<!--            setTimeout(function() {-->
+<!--                alert.style.display = 'none';-->
+<!--            }, 5000);-->
+<!--        };-->
+<!--      </script>-->
+<!--    {% endif %}-->
+<!--</body>-->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    h3 {
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    button[type="submit"] {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #555;
+    }
+    #aaa{
+width:10%;
+}
+
+
+.buttonback {
+    font-family: 'Poppins',sans-serif;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    outline: none;
+}
+
+.buttonback:hover {
+    color: #fff;
+}
+
+.buttonback:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f09819;
+    border-radius: 10rem;
+    z-index: -2;
+}
+
+.buttonback:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ff512f;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+
+.buttonback:hover:before {
+    width: 100%;
+}
+  h3 {
+      color: #333;
+      text-align: center;
+    }
+.hero-wrap {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+  }
+
+  .hero-wrap:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: -1;
+  }
+
+  .slider-text {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #000;
+    padding-top: 150px;
+  }
+
+  .slider-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .tour-details {
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .aru {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url({% static 'website/images2/white.jpeg' %});
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
+  z-index: -1;
+  </style>
+
+<!--</html>-->
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="{% static   'website/images2/travel.png'%}" type="image/x-icon">
+  <title>Tours List</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="{% static 'website/css/animate.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/jquery.timepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'website/css/style.css' %}">
+</head>
+
+<body>
+
+<!--<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({{ tours.image.url }});">-->
+<!--  <div class="overlay"></div>-->
+<!--  <div class="container">-->
+<!--    <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">-->
+<!--      <div class="col-md-9 ftco-animate pb-5 text-center">-->
+<!--        <p class="breadcrumbs"><span class="mr-2"><a href="mainu">Home <i class="fa fa-chevron-right"></i></a></span> <span>{{ tours.place }} <i class="fa fa-chevron-right"></i></span></p>-->
+<!--        <h1 class="mb-0 bread">{{ tours.place }}</h1>-->
+<!--        <p class="tour-details">{{ tours.description|truncatewords:50 }}</p>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
+
+<section class="hero-wrap js-fullheight" style="background-image: url({{ tours.image.url }});">
+   <div class="aru"> AAAAAAAAAAAAAAAAA</div>
+  <div class="container">
+    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+      <div class="col-md-12 ftco-animate text-center">
+        <h1 class="mb-4">{{ tours.place }}</h1>
+        <p class="tour-details">{{ tours.description|truncatewords:50 }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<button class="buttonback" id="aaa" onclick="goBack()">Go Back</button>
+  {% load static %}
+
+
+  <form action="registerbutton/" method="post">
+    {% csrf_token %}
+      <h3>Register to {{ tours.place }} tour here!</h3>
+
+    <label for="name">Name</label>
+    <input type="text" placeholder="Enter your name" id="name" name="name">
+
+    <label for="lastname">Last name</label>
+    <input type="text" placeholder="Enter your last name" id="lastname" name="lastname">
+
+    <label for="phonenumber">Phone Number</label>
+    <input type="tel" placeholder="Enter your phone number" id="phonenumber" name="phonenumber">
+
+    <label for="phonenumber">Card Number</label>
+    <input type="number" placeholder="Enter your card number" id="cardnumber" name="cardnumber">
+
+    <label for="cvv">CVV</label>
+    <input type="number" placeholder="Enter CVV" id="cvv" name="cvv">
+
+    <label for="expiration">Expiration Date</label>
+    <input type="date" placeholder="Enter expiration of your card" id="expiration" name="expiration">
+
+    {% if registered %}
+    <p>You have successfully registered!</p>
+    {% endif %}
+
+    <button type="submit">Register</button>
+  </form>
+
+  {% if registered %}
+  <script>
+    window.onload = function() {
+      alert("You have successfully registered!");
+
+      // Wait for 5 seconds (5000 milliseconds) and then hide the message
+      setTimeout(function() {
+        alert.style.display = 'none';
+      }, 5000);
+    };
+  </script>
+  {% endif %}
+  <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+
+</html>
